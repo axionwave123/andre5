@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #6C2CFF;
+  --primary-dark: #4A1DB8;
+  --accent: #FFB800;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.btn-primary {
+  @apply bg-[#6C2CFF] hover:bg-[#4A1DB8] text-white font-semibold py-3 px-6 rounded-xl transition;
+}
+
+.btn-accent {
+  @apply bg-[#FFB800] hover:bg-yellow-500 text-black font-semibold py-3 px-6 rounded-xl transition;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden;
+}
