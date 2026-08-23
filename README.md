@@ -1,94 +1,138 @@
-# GREBY Marketplace
+# GREBY Marketplace — Complete System
 
 **Everything You Need, Anywhere You Are.**
 
-A complete 20-screen marketplace UI system for Properties, Cars, Lands, Machines, Wholesale & Retail products.
+20-screen marketplace for Properties • Cars • Lands • Machines • Wholesale & Retail.
 
-![GREBY](https://img.shields.io/badge/Screens-20-6C2CFF) ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3) ![Status](https://img.shields.io/badge/Status-Demo%20Ready-10B981)
+---
 
-## Live Demo
+## Quick Start (Static UI)
 
-Open `index.html` in any modern browser, or deploy to:
+1. Open `index.html` in a browser  
+2. Or enable **GitHub Pages** (Settings → Pages → Branch: `main` → Save)  
+3. Live URL will be: `https://axionwave123.github.io/andre5/`
 
-- **GitHub Pages**
-- **Netlify** (drag & drop the folder)
-- **Vercel**
-- Any static host
+A floating **Screens** button (bottom-right) lets you jump between all 20 screens.
 
-## Screens Included
+---
 
-| # | Screen | Description |
-|---|--------|-------------|
-| 01 | Intro / Splash | Brand landing with categories |
-| 02 | Language | Multi-language selection |
-| 03 | Sign Up / Login | Authentication with social login |
-| 04 | Location | City/country + GPS selection |
-| 05 | Home | Hero, categories, navigation |
-| 06 | What's New | Latest listings carousel |
-| 07 | Marketplace / Search | Filters, product grid |
-| 08 | Product Details | Retail product view + cart |
-| 09 | Property / Car Details | Full property/car listing |
-| 10 | Enquiry / Contact Seller | Lead generation flow |
-| 11 | Reviews & Videos | Ratings + video reviews |
-| 12 | Wishlist | Saved items |
-| 13 | Price Alerts | Price drop notifications |
-| 14 | Cart | Shopping cart with totals |
-| 15 | Checkout | Customer details step |
-| 16 | Payment | Card / Transfer / COD |
-| 17 | Order Confirmation | Success screen |
-| 18 | Promoter Dashboard | Affiliate stats & earnings |
-| 19 | Seller Dashboard | Listings, sales, analytics |
-| 20 | Admin Dashboard | Platform overview & verifications |
+## Project Structure
 
-## Features
+```
+andre5/
+├── index.html              # Full interactive static UI (all 20 screens)
+├── css/styles.css          # Complete design system
+├── js/app.js               # Navigation + Chart.js dashboards
+├── backend/                # Node.js + Express + SQLite API
+│   ├── server.js
+│   ├── package.json
+│   └── init-db.js
+├── frontend-next/          # Next.js 14 + React + Tailwind version
+│   ├── app/
+│   ├── package.json
+│   └── ...
+└── .github/workflows/      # Auto-deploy to GitHub Pages
+```
 
-- Fully responsive (mobile-first)
-- Purple brand theme matching design system
-- Interactive navigation between all 20 screens
-- Chart.js dashboards (Seller + Admin)
-- Bootstrap 5 + Font Awesome + Inter font
-- Demo navigation panel (bottom-right) for easy screen switching
+---
 
-## Technologies
+## 1. Expanded Screens (Static Version)
 
-- HTML5
-- CSS3 (Custom properties + modern layout)
-- JavaScript (Vanilla)
-- Bootstrap 5.3
-- Font Awesome 6
-- Chart.js
-- Google Fonts (Inter)
+All 20 screens from the original design are implemented in `index.html` with:
+
+- Splash / Language / Auth / Location
+- Home with categories & bottom nav
+- Marketplace + Search + Filters
+- Product Details + Property/Car Details
+- Enquiry flow, Reviews & Videos
+- Wishlist, Price Alerts, Cart
+- Checkout → Payment → Order Confirmation
+- Promoter Dashboard (affiliate stats)
+- Seller Dashboard (listings + Chart.js)
+- Admin Dashboard (platform overview + verifications)
+
+---
+
+## 2. Backend (Node.js + Express + SQLite)
+
+```bash
+cd backend
+npm install
+node server.js          # runs on http://localhost:4000
+node init-db.js         # seed sample sellers & listings
+```
+
+### Key Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/register` | Create account |
+| POST | `/api/auth/login` | Login → JWT |
+| GET  | `/api/listings` | Search / filter listings |
+| GET  | `/api/listings/:id` | Single listing |
+| POST | `/api/listings` | Create listing (seller) |
+| POST | `/api/orders` | Place order |
+| GET  | `/api/wishlist` | User wishlist |
+| GET  | `/api/dashboard/seller` | Seller stats |
+| GET  | `/api/dashboard/admin` | Admin stats |
+| GET  | `/api/dashboard/promoter` | Promoter stats |
+
+**Default admin:** `admin@greby.com` / `admin123`  
+**Sample sellers:** any `*@greby.com` / `password123`
+
+Roles: `customer` • `seller` • `promoter` • `admin`
+
+---
+
+## 3. Next.js Version
+
+```bash
+cd frontend-next
+npm install
+npm run dev          # http://localhost:3000
+```
+
+Modern React 18 + Next.js 14 App Router + Tailwind CSS.  
+Includes splash → auth → home → marketplace flow and dashboard placeholders.  
+Easily expandable with the same API.
+
+---
+
+## 4. GitHub Pages
+
+A GitHub Actions workflow (`.github/workflows/deploy-pages.yml`) is included.
+
+**To enable:**
+
+1. Go to your repo → **Settings → Pages**
+2. Under “Build and deployment” choose **GitHub Actions**
+3. Push any change to `main` (or run the workflow manually)
+4. Site will be live at:  
+   **https://axionwave123.github.io/andre5/**
+
+Alternatively (classic method):  
+Settings → Pages → Source: Deploy from branch `main` / root.
+
+---
 
 ## Color Palette
 
-| Color | Hex | Usage |
+| Token | Hex | Usage |
 |-------|-----|-------|
-| Primary Purple | `#6C2CFF` | Buttons, accents, brand |
-| Accent Yellow | `#FFB800` | CTAs, highlights |
+| Primary | `#6C2CFF` | Brand, buttons, links |
+| Accent | `#FFB800` | CTAs, badges |
 | Dark | `#1F2937` | Text |
-| Success | `#10B981` | Verified badges |
-| Dark BG | `#0F172A` / `#1E293B` | Dashboards |
+| Success | `#10B981` | Verified |
+| Dashboard BG | `#0F172A` | Dark panels |
 
-## How to Deploy
+---
 
-### GitHub Pages
-1. Go to Settings → Pages
-2. Select branch `main` and folder `/ (root)`
-3. Visit `https://axionwave123.github.io/andre5/`
+## Tech Stack
 
-### Netlify / Vercel
-Simply drag the project folder or connect the GitHub repo.
-
-## Key Systems (Planned Backend)
-
-- User Authentication & Roles (Customer, Seller, Promoter, Admin)
-- Affiliate Tracking & Commission System
-- Seller & Listing Verification System
-- Messaging & Notification System
-- Review & Rating System with Moderation
-- Payment Gateway Integration
-- Location Based Search
-- Analytics & Reporting
+- **Frontend (Static):** HTML5, CSS3, Vanilla JS, Bootstrap 5, Chart.js, Font Awesome
+- **Frontend (Modern):** Next.js 14, React 18, Tailwind CSS
+- **Backend:** Node.js, Express, SQLite, JWT, bcrypt
+- **Deploy:** GitHub Pages / Netlify / Vercel / any Node host for API
 
 ---
 
