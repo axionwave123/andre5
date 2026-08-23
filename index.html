@@ -11,16 +11,12 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <!-- App Container -->
   <div id="app">
-    <!-- SCREEN 01: INTRO / SPLASH -->
+    <!-- 01 SPLASH -->
     <section id="screen-01" class="screen active">
       <div class="splash-screen">
         <div class="splash-content text-center">
-          <div class="logo-large mb-4">
-            <span class="logo-icon">G</span>
-            <h1 class="display-3 fw-bold text-white">GREBY</h1>
-          </div>
+          <div class="logo-large mb-4"><span class="logo-icon">G</span><h1 class="display-3 fw-bold text-white">GREBY</h1></div>
           <p class="lead text-white-50 mb-5">Everything You Need, Anywhere You Are.</p>
           <div class="categories-icons d-flex justify-content-center gap-4 mb-5 flex-wrap">
             <div class="cat-icon"><i class="fas fa-home"></i><span>Properties</span></div>
@@ -34,117 +30,115 @@
             <button class="btn btn-outline-light btn-lg px-4" onclick="showScreen('05')">Learn More</button>
           </div>
         </div>
-        <div class="splash-footer">
-          <span class="badge bg-warning text-dark">20 SCREENS COMPLETE SYSTEM</span>
-        </div>
+        <div class="splash-footer"><span class="badge bg-warning text-dark">20 SCREENS COMPLETE SYSTEM</span></div>
       </div>
     </section>
 
-    <!-- SCREEN 02: LANGUAGE -->
+    <!-- 02 LANGUAGE -->
     <section id="screen-02" class="screen">
-      <div class="container py-5">
-        <div class="row justify-content-center">
-          <div class="col-md-6 col-lg-5">
-            <div class="card border-0 shadow-lg">
-              <div class="card-body p-5">
-                <h3 class="fw-bold mb-1">Choose Your Language</h3>
-                <p class="text-muted mb-4">Select your preferred language</p>
-                <div class="language-list">
-                  <div class="lang-item active" onclick="selectLang(this)">
-                    <img src="https://flagcdn.com/w40/gb.png" alt="English" class="flag"> English
-                    <i class="fas fa-check-circle text-primary ms-auto"></i>
-                  </div>
-                  <div class="lang-item" onclick="selectLang(this)">
-                    <img src="https://flagcdn.com/w40/fr.png" alt="Français" class="flag"> Français
-                  </div>
-                  <div class="lang-item" onclick="selectLang(this)">
-                    <img src="https://flagcdn.com/w40/es.png" alt="Español" class="flag"> Español
-                  </div>
-                  <div class="lang-item" onclick="selectLang(this)">
-                    <img src="https://flagcdn.com/w40/sa.png" alt="العربية" class="flag"> العربية
-                  </div>
-                </div>
-                <button class="btn btn-primary w-100 mt-4 py-3" onclick="showScreen('03')">Continue</button>
+      <div class="container py-5"><div class="row justify-content-center"><div class="col-md-6 col-lg-5">
+        <div class="card border-0 shadow-lg"><div class="card-body p-5">
+          <h3 class="fw-bold mb-1">Choose Your Language</h3>
+          <p class="text-muted mb-4">Select your preferred language</p>
+          <div class="language-list">
+            <div class="lang-item active" onclick="selectLang(this)"><img src="https://flagcdn.com/w40/gb.png" class="flag"> English <i class="fas fa-check-circle text-primary ms-auto"></i></div>
+            <div class="lang-item" onclick="selectLang(this)"><img src="https://flagcdn.com/w40/fr.png" class="flag"> Français</div>
+            <div class="lang-item" onclick="selectLang(this)"><img src="https://flagcdn.com/w40/es.png" class="flag"> Español</div>
+            <div class="lang-item" onclick="selectLang(this)"><img src="https://flagcdn.com/w40/sa.png" class="flag"> العربية</div>
+          </div>
+          <button class="btn btn-primary w-100 mt-4 py-3" onclick="showScreen('03')">Continue</button>
+        </div></div>
+      </div></div></div>
+    </section>
+
+    <!-- 03 LOGIN / SIGNUP -->
+    <section id="screen-03" class="screen">
+      <div class="container py-5"><div class="row justify-content-center"><div class="col-md-6 col-lg-5">
+        <div class="card border-0 shadow-lg"><div class="card-body p-5">
+          <ul class="nav nav-pills mb-4"><li class="nav-item flex-fill"><button class="nav-link active w-100" data-bs-toggle="pill" data-bs-target="#login-tab">Login</button></li>
+          <li class="nav-item flex-fill"><button class="nav-link w-100" data-bs-toggle="pill" data-bs-target="#signup-tab">Sign Up</button></li></ul>
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="login-tab">
+              <h4 class="fw-bold">Welcome Back!</h4>
+              <p class="text-muted small">Login to your GREBY account</p>
+              <form onsubmit="event.preventDefault();showScreen('04')">
+                <div class="mb-3"><label class="form-label">Email or Phone</label><input type="text" class="form-control form-control-lg" placeholder="Enter email or phone"></div>
+                <div class="mb-3"><label class="form-label">Password</label><input type="password" class="form-control form-control-lg" placeholder="Enter password"><a href="#" class="small text-primary float-end mt-1">Forgot?</a></div>
+                <div class="form-check mb-4"><input class="form-check-input" type="checkbox" id="remember"><label class="form-check-label" for="remember">Remember me</label></div>
+                <button type="submit" class="btn btn-primary w-100 py-3">Login</button>
+              </form>
+              <div class="text-center my-3 text-muted">or continue with</div>
+              <div class="d-flex gap-2 justify-content-center">
+                <button class="btn btn-outline-secondary"><i class="fab fa-google"></i></button>
+                <button class="btn btn-outline-secondary"><i class="fab fa-facebook-f"></i></button>
+                <button class="btn btn-outline-secondary"><i class="fab fa-apple"></i></button>
               </div>
             </div>
+            <div class="tab-pane fade" id="signup-tab">
+              <h4 class="fw-bold">Create Account</h4>
+              <form onsubmit="event.preventDefault();showScreen('04')">
+                <div class="mb-3"><input type="text" class="form-control form-control-lg" placeholder="Full Name"></div>
+                <div class="mb-3"><input type="email" class="form-control form-control-lg" placeholder="Email"></div>
+                <div class="mb-3"><input type="tel" class="form-control form-control-lg" placeholder="Phone Number"></div>
+                <div class="mb-3"><input type="password" class="form-control form-control-lg" placeholder="Password"></div>
+                <button type="submit" class="btn btn-primary w-100 py-3">Sign Up</button>
+              </form>
+            </div>
           </div>
-        </div>
-      </div>
+        </div></div>
+      </div></div></div>
     </section>
 
-    <!-- Remaining screens abbreviated for tool limits - full version in repo via local -->
-    <!-- NOTE: Full complete HTML was prepared. Using a streamlined version here for successful deploy. -->
+    <!-- 04 LOCATION -->
+    <section id="screen-04" class="screen">
+      <div class="container py-5"><div class="row justify-content-center"><div class="col-md-6 col-lg-5">
+        <div class="card border-0 shadow-lg"><div class="card-body p-5 text-center">
+          <div class="location-icon mb-4"><i class="fas fa-map-marker-alt fa-3x text-primary"></i></div>
+          <h3 class="fw-bold">Where are you?</h3>
+          <p class="text-muted mb-4">We'll show you products near you</p>
+          <button class="btn btn-primary w-100 py-3 mb-3" onclick="showScreen('05')"><i class="fas fa-location-arrow me-2"></i> Use my current location</button>
+          <div class="text-muted my-3">or select your city</div>
+          <select class="form-select form-select-lg mb-3"><option>Select Country</option><option selected>Nigeria</option><option>Ghana</option><option>Kenya</option></select>
+          <select class="form-select form-select-lg mb-4"><option>Select City</option><option selected>Lagos</option><option>Abuja</option><option>Port Harcourt</option></select>
+          <button class="btn btn-primary w-100 py-3" onclick="showScreen('05')">Show Products Near Me</button>
+        </div></div>
+      </div></div></div>
+    </section>
+
+    <!-- 05 HOME -->
     <section id="screen-05" class="screen">
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container-fluid">
-          <a class="navbar-brand fw-bold" href="#" onclick="showScreen('05')">
-            <span class="logo-sm">G</span> GREBY
-          </a>
+          <a class="navbar-brand fw-bold" href="#" onclick="showScreen('05')"><span class="logo-sm">G</span> GREBY</a>
           <div class="d-flex align-items-center gap-3">
+            <div class="search-box d-none d-md-block"><input type="text" class="form-control" placeholder="Search for products, properties, cars..."></div>
             <a href="#" class="nav-icon" onclick="showScreen('12')"><i class="fas fa-heart"></i></a>
             <a href="#" class="nav-icon" onclick="showScreen('14')"><i class="fas fa-shopping-cart"></i><span class="badge-count">2</span></a>
             <a href="#" class="nav-icon" onclick="showScreen('03')"><i class="fas fa-user"></i></a>
           </div>
         </div>
       </nav>
-      <div class="home-hero">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
-              <h1 class="display-5 fw-bold text-white mb-3">Find Everything.<br>Earn Together.</h1>
-              <p class="text-white-50 mb-4">Shop, Sell & Earn with GREBY Marketplace</p>
-              <div class="d-flex gap-3">
-                <button class="btn btn-warning btn-lg px-4" onclick="showScreen('07')">Shop Now</button>
-                <button class="btn btn-outline-light btn-lg px-4" onclick="showScreen('19')">Become a Seller</button>
-              </div>
-            </div>
+      <div class="home-hero"><div class="container"><div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold text-white mb-3">Find Everything.<br>Earn Together.</h1>
+          <p class="text-white-50 mb-4">Shop, Sell & Earn with GREBY Marketplace</p>
+          <div class="d-flex gap-3">
+            <button class="btn btn-warning btn-lg px-4" onclick="showScreen('07')">Shop Now</button>
+            <button class="btn btn-outline-light btn-lg px-4" onclick="showScreen('19')">Become a Seller</button>
           </div>
         </div>
-      </div>
+        <div class="col-lg-6 text-center d-none d-lg-block">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600" alt="Modern Home" class="hero-img rounded-4 shadow">
+        </div>
+      </div></div></div>
       <div class="container py-4">
         <div class="row g-3 mb-4">
-          <div class="col-6 col-md-4 col-lg-2">
-            <div class="category-card" onclick="showScreen('07')">
-              <i class="fas fa-home"></i>
-              <span>Properties</span>
-              <small>1,345 Listings</small>
-            </div>
-          </div>
-          <div class="col-6 col-md-4 col-lg-2">
-            <div class="category-card" onclick="showScreen('07')">
-              <i class="fas fa-car"></i>
-              <span>Cars</span>
-              <small>1,820 Listings</small>
-            </div>
-          </div>
-          <div class="col-6 col-md-4 col-lg-2">
-            <div class="category-card" onclick="showScreen('07')">
-              <i class="fas fa-map"></i>
-              <span>Lands</span>
-              <small>923 Listings</small>
-            </div>
-          </div>
-          <div class="col-6 col-md-4 col-lg-2">
-            <div class="category-card" onclick="showScreen('07')">
-              <i class="fas fa-cogs"></i>
-              <span>Machines</span>
-              <small>412 Listings</small>
-            </div>
-          </div>
-          <div class="col-6 col-md-4 col-lg-2">
-            <div class="category-card" onclick="showScreen('07')">
-              <i class="fas fa-boxes"></i>
-              <span>Wholesale</span>
-              <small>3,192 Products</small>
-            </div>
-          </div>
-          <div class="col-6 col-md-4 col-lg-2">
-            <div class="category-card" onclick="showScreen('07')">
-              <i class="fas fa-store"></i>
-              <span>Retail</span>
-              <small>6,214 Products</small>
-            </div>
-          </div>
+          <div class="col-6 col-md-4 col-lg-2"><div class="category-card" onclick="showScreen('07')"><i class="fas fa-home"></i><span>Properties</span><small>1,345 Listings</small></div></div>
+          <div class="col-6 col-md-4 col-lg-2"><div class="category-card" onclick="showScreen('07')"><i class="fas fa-car"></i><span>Cars</span><small>1,820 Listings</small></div></div>
+          <div class="col-6 col-md-4 col-lg-2"><div class="category-card" onclick="showScreen('07')"><i class="fas fa-map"></i><span>Lands</span><small>923 Listings</small></div></div>
+          <div class="col-6 col-md-4 col-lg-2"><div class="category-card" onclick="showScreen('07')"><i class="fas fa-cogs"></i><span>Machines</span><small>412 Listings</small></div></div>
+          <div class="col-6 col-md-4 col-lg-2"><div class="category-card" onclick="showScreen('07')"><i class="fas fa-boxes"></i><span>Wholesale</span><small>3,192 Products</small></div></div>
+          <div class="col-6 col-md-4 col-lg-2"><div class="category-card" onclick="showScreen('07')"><i class="fas fa-store"></i><span>Retail</span><small>6,214 Products</small></div></div>
         </div>
       </div>
       <nav class="bottom-nav">
@@ -156,22 +150,256 @@
       </nav>
     </section>
 
-    <!-- Demo Nav for all screens -->
+    <!-- 06 WHAT'S NEW -->
+    <section id="screen-06" class="screen">
+      <div class="page-header"><button class="btn-back" onclick="showScreen('05')"><i class="fas fa-arrow-left"></i></button><h5 class="mb-0">What's New</h5><a href="#" class="text-primary small">View All</a></div>
+      <div class="container py-3">
+        <p class="text-muted small mb-3">Check out the latest products and listings</p>
+        <div class="row g-3">
+          <div class="col-6 col-md-3"><div class="product-card" onclick="showScreen('09')"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=300" alt=""><div class="p-2"><h6 class="mb-1">4 Bedroom Duplex</h6><p class="price mb-0">₦120,000,000</p><div class="rating"><i class="fas fa-star"></i> 4.8</div></div></div></div>
+          <div class="col-6 col-md-3"><div class="product-card" onclick="showScreen('09')"><img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=300" alt=""><div class="p-2"><h6 class="mb-1">Toyota Camry 2020</h6><p class="price mb-0">₦15,000,000</p><div class="rating"><i class="fas fa-star"></i> 4.9</div></div></div></div>
+          <div class="col-6 col-md-3"><div class="product-card" onclick="showScreen('09')"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=300" alt=""><div class="p-2"><h6 class="mb-1">2 Acres of Land</h6><p class="price mb-0">₦45,000,000</p><div class="rating"><i class="fas fa-star"></i> 4.7</div></div></div></div>
+          <div class="col-6 col-md-3"><div class="product-card" onclick="showScreen('08')"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300" alt=""><div class="p-2"><h6 class="mb-1">Industrial Generator</h6><p class="price mb-0">₦12,500,000</p><div class="rating"><i class="fas fa-star"></i> 4.6</div></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 MARKETPLACE -->
+    <section id="screen-07" class="screen">
+      <div class="page-header"><button class="btn-back" onclick="showScreen('05')"><i class="fas fa-arrow-left"></i></button><div class="flex-grow-1 mx-2"><input type="text" class="form-control" placeholder="Search for products, properties, cars..."></div><button class="btn btn-outline-primary btn-sm"><i class="fas fa-filter"></i></button></div>
+      <div class="container-fluid px-3 py-2">
+        <div class="d-flex gap-2 overflow-auto pb-2 filter-tabs">
+          <button class="btn btn-primary btn-sm rounded-pill">All</button>
+          <button class="btn btn-outline-secondary btn-sm rounded-pill">Properties</button>
+          <button class="btn btn-outline-secondary btn-sm rounded-pill">Cars</button>
+          <button class="btn btn-outline-secondary btn-sm rounded-pill">Lands</button>
+          <button class="btn btn-outline-secondary btn-sm rounded-pill">Machines</button>
+          <button class="btn btn-outline-secondary btn-sm rounded-pill">Products</button>
+        </div>
+        <div class="row g-3 mt-2">
+          <div class="col-6 col-md-4 col-lg-3"><div class="product-card" onclick="showScreen('09')"><span class="badge bg-success position-absolute m-2">Verified</span><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=300" alt=""><div class="p-2"><h6>4 Bedroom Bungalow</h6><p class="price">₦75,000,000</p><small class="text-muted">Lagos • Top Rated</small></div></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="product-card" onclick="showScreen('09')"><img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=300" alt=""><div class="p-2"><h6>Toyota RAV4 2019</h6><p class="price">₦12,500,000</p><small class="text-muted">Abuja</small></div></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="product-card" onclick="showScreen('09')"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=300" alt=""><div class="p-2"><h6>1 Plot of Land</h6><p class="price">₦6,500,000</p><small class="text-muted">Ibadan</small></div></div></div>
+          <div class="col-6 col-md-4 col-lg-3"><div class="product-card" onclick="showScreen('08')"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=300" alt=""><div class="p-2"><h6>Luxury Sofa Set</h6><p class="price">₦350,000</p><small class="text-muted">Lagos</small></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 PRODUCT DETAILS -->
+    <section id="screen-08" class="screen">
+      <div class="page-header"><button class="btn-back" onclick="showScreen('07')"><i class="fas fa-arrow-left"></i></button><h5 class="mb-0">Product Details</h5><div><a href="#"><i class="fas fa-share-alt me-3"></i></a><a href="#"><i class="far fa-heart"></i></a></div></div>
+      <div class="container py-3"><div class="row">
+        <div class="col-lg-6"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600" class="img-fluid rounded-4 mb-3" alt="Sofa"></div>
+        <div class="col-lg-6">
+          <h3 class="fw-bold">Luxury L-Shaped Sofa</h3>
+          <div class="d-flex align-items-center gap-2 mb-2"><span class="rating"><i class="fas fa-star text-warning"></i> 4.8 (126 reviews)</span><span class="badge bg-success">Verified Seller</span></div>
+          <p class="text-muted">Sold by: Comfort Furnitures</p>
+          <h2 class="price-lg text-primary">₦350,000 <small class="text-muted text-decoration-line-through fs-6">₦420,000</small> <span class="badge bg-danger">-17%</span></h2>
+          <div class="mb-3"><label class="form-label">Color</label><div class="d-flex gap-2"><span class="color-swatch bg-dark active"></span><span class="color-swatch bg-secondary"></span><span class="color-swatch bg-light border"></span></div></div>
+          <div class="mb-4"><label class="form-label">Quantity</label><div class="input-group" style="width:120px"><button class="btn btn-outline-secondary">-</button><input type="text" class="form-control text-center" value="1"><button class="btn btn-outline-secondary">+</button></div></div>
+          <div class="d-flex gap-2"><button class="btn btn-outline-primary flex-fill py-3" onclick="showScreen('14')"><i class="fas fa-cart-plus me-2"></i>Add to Cart</button><button class="btn btn-primary flex-fill py-3">Buy Now</button></div>
+        </div>
+      </div></div>
+    </section>
+
+    <!-- 09 PROPERTY DETAILS -->
+    <section id="screen-09" class="screen">
+      <div class="page-header"><button class="btn-back" onclick="showScreen('07')"><i class="fas fa-arrow-left"></i></button><h5 class="mb-0">Property Details</h5><div><a href="#"><i class="fas fa-share-alt me-3"></i></a><a href="#"><i class="far fa-heart"></i></a></div></div>
+      <div class="container py-3">
+        <div class="position-relative mb-3"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800" class="img-fluid rounded-4 w-100" style="max-height:350px;object-fit:cover" alt="Duplex"><span class="badge bg-danger position-absolute top-0 start-0 m-3">FEATURED</span></div>
+        <h3 class="fw-bold">4 Bedroom Duplex</h3>
+        <h2 class="text-primary mb-2">₦120,000,000</h2>
+        <div class="d-flex gap-3 mb-3 text-muted"><span><i class="fas fa-bed me-1"></i> 4 Beds</span><span><i class="fas fa-bath me-1"></i> 5 Baths</span><span><i class="fas fa-ruler-combined me-1"></i> 350sqm</span><span><i class="fas fa-map-marker-alt me-1"></i> Lekki</span></div>
+        <p class="text-muted">Listed by: Royal Homes Ltd <span class="badge bg-success">Verified Seller</span></p>
+        <div class="d-flex gap-2 mb-4"><button class="btn btn-primary flex-fill py-3" onclick="showScreen('10')"><i class="fas fa-phone me-2"></i>Contact Seller</button><button class="btn btn-outline-primary flex-fill py-3" onclick="showScreen('10')">Request Info</button></div>
+        <ul class="nav nav-tabs"><li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#overview">Overview</a></li><li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#details">Details</a></li><li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#location">Location</a></li><li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#reviews">Reviews</a></li></ul>
+        <div class="tab-content p-3 border border-top-0 rounded-bottom"><div class="tab-pane fade show active" id="overview"><p>Beautiful 4 bedroom duplex located in the heart of Lekki. Fully finished with modern fittings, spacious living areas, fitted kitchen, and a serene environment.</p></div><div class="tab-pane fade" id="details"><ul><li>Year Built: 2022</li><li>Parking: 3 Cars</li><li>Security: 24/7</li><li>Power: Inverter + Generator</li></ul></div><div class="tab-pane fade" id="location"><p>Lekki Phase 1, Lagos, Nigeria</p></div><div class="tab-pane fade" id="reviews"><p>See all reviews in the Reviews section.</p></div></div>
+      </div>
+    </section>
+
+    <!-- 10 ENQUIRY -->
+    <section id="screen-10" class="screen">
+      <div class="page-header"><button class="btn-back" onclick="showScreen('09')"><i class="fas fa-arrow-left"></i></button><h5 class="mb-0">Request Information</h5><span></span></div>
+      <div class="container py-4">
+        <div class="steps mb-4"><div class="step active">1<br><small>Request Info</small></div><div class="step">2<br><small>Seller Response</small></div><div class="step">3<br><small>Arrange Meeting</small></div><div class="step">4<br><small>Inspection</small></div></div>
+        <div class="card border-0 shadow-sm"><div class="card-body p-4">
+          <h5 class="fw-bold">Tell the seller what you need to know</h5>
+          <p class="text-muted small">I'm interested in</p>
+          <select class="form-select mb-3"><option selected>4 Bedroom Duplex in Lekki</option></select>
+          <label class="form-label">Your Message</label>
+          <textarea class="form-control mb-3" rows="4" placeholder="Hello, I'm interested in this property. Please send me more information..."></textarea>
+          <button class="btn btn-primary w-100 py-3" onclick="showScreen('17')">Send Request</button>
+          <p class="text-muted small text-center mt-3 mb-0">The seller will get back to you soon.</p>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- 11 REVIEWS -->
+    <section id="screen-11" class="screen">
+      <div class="page-header"><button class="btn-back" onclick="showScreen('09')"><i class="fas fa-arrow-left"></i></button><h5 class="mb-0">Reviews & Videos</h5><a href="#" class="text-primary small">Write a Review</a></div>
+      <div class="container py-3">
+        <div class="d-flex align-items-center gap-3 mb-4"><div class="display-4 fw-bold text-primary">4.8</div><div><div class="text-warning mb-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><small class="text-muted">Customer Reviews (126)</small></div></div>
+        <div class="review-item mb-3"><div class="d-flex justify-content-between"><strong>John D.</strong><div class="text-warning small"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><p class="mb-1">Great quality sofa! Very comfortable and the delivery was fast.</p><small class="text-muted">2 days ago</small></div>
+        <h6 class="fw-bold mt-4 mb-3">Video Reviews</h6>
+        <div class="row g-2"><div class="col-6"><div class="video-thumb"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=300" alt=""><i class="fas fa-play-circle"></i></div></div><div class="col-6"><div class="video-thumb"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=300" alt=""><i class="fas fa-play-circle"></i></div></div></div>
+      </div>
+    </section>
+
+    <!-- 12 WISHLIST -->
+    <section id="screen-12" class="screen">
+      <div class="page-header"><button class="btn-back" onclick="showScreen('05')"><i class="fas fa-arrow-left"></i></button><h5 class="mb-0">My Wishlist (6)</h5><span></span></div>
+      <div class="container py-3">
+        <div class="wishlist-item d-flex gap-3 mb-3 p-3 bg-white rounded-3 shadow-sm"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=100" class="rounded" width="80" height="80" style="object-fit:cover"><div class="flex-grow-1"><h6 class="mb-1">4 Bedroom Duplex</h6><p class="price mb-0">₦120,000,000</p></div><button class="btn btn-link text-danger"><i class="fas fa-heart"></i></button></div>
+        <div class="wishlist-item d-flex gap-3 mb-3 p-3 bg-white rounded-3 shadow-sm"><img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100" class="rounded" width="80" height="80" style="object-fit:cover"><div class="flex-grow-1"><h6 class="mb-1">Toyota RAV4 2019</h6><p class="price mb-0">₦12,500,000</p></div><button class="btn btn-link text-danger"><i class="fas fa-heart"></i></button></div>
+        <div class="wishlist-item d-flex gap-3 mb-3 p-3 bg-white rounded-3 shadow-sm"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=100" class="rounded" width="80" height="80" style="object-fit:cover"><div class="flex-grow-1"><h6 class="mb-1">1 Plot of Land</h6><p class="price mb-0">₦6,500,000</p></div><button class="btn btn-link text-danger"><i class="fas fa-heart"></i></button></div>
+        <div class="wishlist-item d-flex gap-3 mb-3 p-3 bg-white rounded-3 shadow-sm"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=100" class="rounded" width="80" height="80" style="object-fit:cover"><div class="flex-grow-1"><h6 class="mb-1">Luxury L-Shaped Sofa</h6><p class="price mb-0">₦350,000</p></div><button class="btn btn-link text-danger"><i class="fas fa-heart"></i></button></div>
+      </div>
+    </section>
+
+    <!-- 13 PRICE ALERTS -->
+    <section id="screen-13" class="screen">
+      <div class="page-header"><button class="btn-back" onclick="showScreen('05')"><i class="fas fa-arrow-left"></i></button><h5 class="mb-0">Price Alerts</h5><span></span></div>
+      <div class="container py-3">
+        <div class="alert-item d-flex justify-content-between align-items-center p-3 bg-white rounded-3 shadow-sm mb-3"><div><h6 class="mb-0">Toyota Camry 2020</h6><small class="text-muted">Alert when price drops below ₦14,500,000</small></div><div class="form-check form-switch"><input class="form-check-input" type="checkbox" checked></div></div>
+        <div class="alert-item d-flex justify-content-between align-items-center p-3 bg-white rounded-3 shadow-sm mb-3"><div><h6 class="mb-0">3 Bedroom Apartment</h6><small class="text-muted">Alert when price drops below ₦45,000,000</small></div><div class="form-check form-switch"><input class="form-check-input" type="checkbox" checked></div></div>
+        <div class="alert-item d-flex justify-content-between align-items-center p-3 bg-white rounded-3 shadow-sm mb-3"><div><h6 class="mb-0">Industrial Generator</h6><small class="text-muted">Alert when price drops below ₦2,500,000</small></div><div class="form-check form-switch"><input class="form-check-input" type="checkbox"></div></div>
+        <button class="btn btn-primary w-100 py-3 mt-3"><i class="fas fa-plus me-2"></i>Add New Alert</button>
+      </div>
+    </section>
+
+    <!-- 14 CART -->
+    <section id="screen-14" class="screen">
+      <div class="page-header"><button class="btn-back" onclick="showScreen('05')"><i class="fas fa-arrow-left"></i></button><h5 class="mb-0">Shopping Cart (3)</h5><a href="#" class="text-primary small">Edit</a></div>
+      <div class="container py-3">
+        <div class="cart-item d-flex gap-3 mb-3 p-3 bg-white rounded-3 shadow-sm"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=100" class="rounded" width="80" height="80" style="object-fit:cover"><div class="flex-grow-1"><h6 class="mb-1">Cement 50kg</h6><div class="d-flex align-items-center gap-2"><button class="btn btn-sm btn-outline-secondary">-</button><span>2</span><button class="btn btn-sm btn-outline-secondary">+</button></div></div><div class="text-end"><p class="price mb-0">₦8,400</p></div></div>
+        <div class="cart-item d-flex gap-3 mb-3 p-3 bg-white rounded-3 shadow-sm"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=100" class="rounded" width="80" height="80" style="object-fit:cover"><div class="flex-grow-1"><h6 class="mb-1">Steel Rod 12mm</h6><div class="d-flex align-items-center gap-2"><button class="btn btn-sm btn-outline-secondary">-</button><span>5</span><button class="btn btn-sm btn-outline-secondary">+</button></div></div><div class="text-end"><p class="price mb-0">₦32,500</p></div></div>
+        <div class="cart-item d-flex gap-3 mb-3 p-3 bg-white rounded-3 shadow-sm"><img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=100" class="rounded" width="80" height="80" style="object-fit:cover"><div class="flex-grow-1"><h6 class="mb-1">Wash Basin</h6><div class="d-flex align-items-center gap-2"><button class="btn btn-sm btn-outline-secondary">-</button><span>1</span><button class="btn btn-sm btn-outline-secondary">+</button></div></div><div class="text-end"><p class="price mb-0">₦15,000</p></div></div>
+        <div class="card border-0 bg-light mt-4"><div class="card-body"><div class="d-flex justify-content-between mb-2"><span>Subtotal</span><span>₦55,900</span></div><div class="d-flex justify-content-between mb-2"><span>Delivery</span><span>₦2,000</span></div><hr><div class="d-flex justify-content-between fw-bold fs-5"><span>Total</span><span class="text-primary">₦57,900</span></div></div></div>
+        <button class="btn btn-primary w-100 py-3 mt-3" onclick="showScreen('15')">Proceed to Checkout</button>
+      </div>
+    </section>
+
+    <!-- 15 CHECKOUT -->
+    <section id="screen-15" class="screen">
+      <div class="page-header"><button class="btn-back" onclick="showScreen('14')"><i class="fas fa-arrow-left"></i></button><h5 class="mb-0">Checkout</h5><span></span></div>
+      <div class="container py-3">
+        <div class="steps mb-4"><div class="step active">1<br><small>Details</small></div><div class="step">2<br><small>Delivery</small></div><div class="step">3<br><small>Payment</small></div><div class="step">4<br><small>Confirm</small></div></div>
+        <div class="card border-0 shadow-sm mb-3"><div class="card-body">
+          <h6 class="fw-bold">Customer Details</h6>
+          <div class="mb-3"><label class="form-label">Full Name</label><input type="text" class="form-control" value="John Doe"></div>
+          <div class="mb-3"><label class="form-label">Phone Number</label><input type="tel" class="form-control" value="08012345678"></div>
+          <div class="mb-3"><label class="form-label">Email Address</label><input type="email" class="form-control" value="john@email.com"></div>
+        </div></div>
+        <button class="btn btn-primary w-100 py-3" onclick="showScreen('16')">Continue to Delivery</button>
+      </div>
+    </section>
+
+    <!-- 16 PAYMENT -->
+    <section id="screen-16" class="screen">
+      <div class="page-header"><button class="btn-back" onclick="showScreen('15')"><i class="fas fa-arrow-left"></i></button><h5 class="mb-0">Payment Method</h5><span></span></div>
+      <div class="container py-3">
+        <div class="payment-option active mb-3 p-3 border rounded-3"><div class="form-check"><input class="form-check-input" type="radio" name="pay" id="card" checked><label class="form-check-label w-100" for="card"><strong>Pay with Card</strong><div class="mt-2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/100px-Visa_Inc._logo.svg.png" height="20" class="me-2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/100px-Mastercard-logo.svg.png" height="20"></div></label></div>
+          <div class="mt-3"><input type="text" class="form-control mb-2" placeholder="Card Number" value="1234 5678 9012 3456"><div class="row g-2"><div class="col-6"><input type="text" class="form-control" placeholder="MM/YY" value="12 / 28"></div><div class="col-6"><input type="text" class="form-control" placeholder="CVV" value="123"></div></div></div>
+        </div>
+        <div class="payment-option mb-3 p-3 border rounded-3"><div class="form-check"><input class="form-check-input" type="radio" name="pay" id="transfer"><label class="form-check-label" for="transfer"><strong>Pay with Transfer</strong></label></div></div>
+        <div class="payment-option mb-3 p-3 border rounded-3"><div class="form-check"><input class="form-check-input" type="radio" name="pay" id="delivery"><label class="form-check-label" for="delivery"><strong>Pay on Delivery</strong></label></div></div>
+        <button class="btn btn-primary w-100 py-3" onclick="showScreen('17')">Pay ₦57,900</button>
+      </div>
+    </section>
+
+    <!-- 17 ORDER CONFIRMATION -->
+    <section id="screen-17" class="screen">
+      <div class="container py-5 text-center">
+        <div class="success-icon mb-4"><i class="fas fa-check-circle fa-5x text-success"></i></div>
+        <h2 class="fw-bold">Order Placed Successfully!</h2>
+        <p class="text-muted">Your order has been received.</p>
+        <p class="fw-bold">Order ID: GRB-2024-000125</p>
+        <div class="card border-0 bg-light d-inline-block px-5 py-3 my-3"><h4 class="text-primary mb-0">Total Amount: ₦57,900</h4></div>
+        <p class="text-muted small">You will receive a confirmation email shortly.</p>
+        <div class="d-flex gap-3 justify-content-center mt-4"><button class="btn btn-primary px-4" onclick="showScreen('05')">Continue Shopping</button><button class="btn btn-outline-primary px-4">View My Orders</button></div>
+      </div>
+    </section>
+
+    <!-- 18 PROMOTER DASHBOARD -->
+    <section id="screen-18" class="screen">
+      <div class="dashboard-header"><div class="d-flex justify-content-between align-items-center"><div><span class="logo-sm">G</span> <strong class="text-white">GREBY</strong><span class="badge bg-warning text-dark ms-2">Promoter</span></div><div class="text-white-50 small">May 1 - May 31, 2024</div></div></div>
+      <div class="container-fluid py-3">
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-md-3"><div class="stat-card"><div class="stat-label">Clicks</div><div class="stat-value">12,458</div><small class="text-success"><i class="fas fa-arrow-up"></i> +24.5%</small></div></div>
+          <div class="col-6 col-md-3"><div class="stat-card"><div class="stat-label">Leads</div><div class="stat-value">8,765</div><small class="text-success"><i class="fas fa-arrow-up"></i> +18.2%</small></div></div>
+          <div class="col-6 col-md-3"><div class="stat-card"><div class="stat-label">Sales</div><div class="stat-value">320</div><small class="text-success"><i class="fas fa-arrow-up"></i> +12.8%</small></div></div>
+          <div class="col-6 col-md-3"><div class="stat-card"><div class="stat-label">Orders</div><div class="stat-value">78</div><small class="text-danger"><i class="fas fa-arrow-down"></i> -3.1%</small></div></div>
+        </div>
+        <div class="card border-0 shadow-sm mb-3"><div class="card-body"><h6 class="fw-bold">Commission Earned</h6><h2 class="text-primary">₦245,800</h2><p class="text-muted small mb-0">This Month • Target: ₦300,000</p></div></div>
+        <div class="card border-0 shadow-sm"><div class="card-body"><h6 class="fw-bold mb-3">Top Performing Links</h6><div class="d-flex justify-content-between mb-2"><span>Toyota Camry 2020</span><span class="text-success">₦48,500</span></div><div class="d-flex justify-content-between mb-2"><span>4 Bedroom Duplex</span><span class="text-success">₦32,000</span></div><div class="d-flex justify-content-between"><span>Luxury Sofa</span><span class="text-success">₦12,300</span></div></div></div>
+        <button class="btn btn-primary w-100 py-3 mt-3">Generate New Link</button>
+      </div>
+      <nav class="bottom-nav dark"><a href="#" class="active"><i class="fas fa-th-large"></i><span>Overview</span></a><a href="#"><i class="fas fa-link"></i><span>Links</span></a><a href="#"><i class="fas fa-chart-line"></i><span>Campaigns</span></a><a href="#"><i class="fas fa-wallet"></i><span>Payout</span></a><a href="#"><i class="fas fa-user"></i><span>Profile</span></a></nav>
+    </section>
+
+    <!-- 19 SELLER DASHBOARD -->
+    <section id="screen-19" class="screen">
+      <div class="dashboard-header dark"><div class="d-flex justify-content-between align-items-center"><div><span class="logo-sm">G</span> <strong class="text-white">GREBY Seller</strong></div><i class="fas fa-bell text-white"></i></div></div>
+      <div class="container-fluid py-3">
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-md-3"><div class="stat-card dark"><div class="stat-label">Total Listings</div><div class="stat-value">24</div></div></div>
+          <div class="col-6 col-md-3"><div class="stat-card dark"><div class="stat-label">Total Views</div><div class="stat-value">15,870</div></div></div>
+          <div class="col-6 col-md-3"><div class="stat-card dark"><div class="stat-label">Leads</div><div class="stat-value">486</div></div></div>
+          <div class="col-6 col-md-3"><div class="stat-card dark"><div class="stat-label">Orders</div><div class="stat-value">128</div></div></div>
+        </div>
+        <div class="card border-0 shadow-sm mb-3" style="background:#1e293b;color:#fff"><div class="card-body"><h6 class="fw-bold">Sales Overview</h6><canvas id="sellerChart" height="150"></canvas></div></div>
+        <div class="d-flex gap-2 mb-3"><button class="btn btn-primary flex-fill">+ Add Listing</button><button class="btn btn-outline-light flex-fill">Messages</button></div>
+      </div>
+      <nav class="bottom-nav dark"><a href="#" class="active"><i class="fas fa-th-large"></i><span>Dashboard</span></a><a href="#"><i class="fas fa-list"></i><span>Listings</span></a><a href="#"><i class="fas fa-shopping-bag"></i><span>Orders</span></a><a href="#"><i class="fas fa-chart-bar"></i><span>Analytics</span></a><a href="#"><i class="fas fa-cog"></i><span>Settings</span></a></nav>
+    </section>
+
+    <!-- 20 ADMIN DASHBOARD -->
+    <section id="screen-20" class="screen">
+      <div class="dashboard-header dark"><div class="d-flex justify-content-between align-items-center"><div><span class="logo-sm">G</span> <strong class="text-white">GREBY Admin</strong></div><div class="text-white-50 small">Dashboard</div></div></div>
+      <div class="container-fluid py-3">
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-md-3"><div class="stat-card dark"><div class="stat-label">Users</div><div class="stat-value">12,458</div></div></div>
+          <div class="col-6 col-md-3"><div class="stat-card dark"><div class="stat-label">Sellers</div><div class="stat-value">1,245</div></div></div>
+          <div class="col-6 col-md-3"><div class="stat-card dark"><div class="stat-label">Promoters</div><div class="stat-value">2,350</div></div></div>
+          <div class="col-6 col-md-3"><div class="stat-card dark"><div class="stat-label">Total Sales</div><div class="stat-value">₦245.8M</div></div></div>
+        </div>
+        <div class="card border-0 shadow-sm mb-3" style="background:#1e293b;color:#fff"><div class="card-body"><h6 class="fw-bold">Sales Overview</h6><canvas id="adminChart" height="120"></canvas></div></div>
+        <div class="card border-0 shadow-sm" style="background:#1e293b;color:#fff"><div class="card-body"><h6 class="fw-bold mb-3">Recent Verifications</h6>
+          <div class="d-flex justify-content-between align-items-center mb-2"><span>Royal Homes Ltd</span><span class="badge bg-success">Seller Verification</span><button class="btn btn-sm btn-outline-success">Approve</button></div>
+          <div class="d-flex justify-content-between align-items-center mb-2"><span>Baba Construction</span><span class="badge bg-warning text-dark">Listing Verification</span><button class="btn btn-sm btn-outline-warning">Review</button></div>
+          <div class="d-flex justify-content-between align-items-center"><span>MacPower Machines</span><span class="badge bg-info">Seller Verification</span><button class="btn btn-sm btn-outline-info">Approve</button></div>
+        </div></div>
+      </div>
+      <nav class="bottom-nav dark"><a href="#" class="active"><i class="fas fa-th-large"></i><span>Dashboard</span></a><a href="#"><i class="fas fa-users"></i><span>Users</span></a><a href="#"><i class="fas fa-store"></i><span>Sellers</span></a><a href="#"><i class="fas fa-bullhorn"></i><span>Promoters</span></a><a href="#"><i class="fas fa-cog"></i><span>Settings</span></a></nav>
+    </section>
+
+    <!-- Demo Navigation -->
     <div class="demo-nav" id="demoNav">
       <button class="demo-toggle" onclick="toggleDemoNav()"><i class="fas fa-bars"></i> Screens</button>
       <div class="demo-menu" id="demoMenu">
         <a href="#" onclick="showScreen('01')">01 - Splash</a>
         <a href="#" onclick="showScreen('02')">02 - Language</a>
-        <a href="#" onclick="showScreen('03')">03 - Login</a>
+        <a href="#" onclick="showScreen('03')">03 - Login/Signup</a>
         <a href="#" onclick="showScreen('04')">04 - Location</a>
         <a href="#" onclick="showScreen('05')">05 - Home</a>
-        <a href="#" onclick="showScreen('18')">18 - Promoter</a>
-        <a href="#" onclick="showScreen('19')">19 - Seller</a>
-        <a href="#" onclick="showScreen('20')">20 - Admin</a>
+        <a href="#" onclick="showScreen('06')">06 - What's New</a>
+        <a href="#" onclick="showScreen('07')">07 - Marketplace</a>
+        <a href="#" onclick="showScreen('08')">08 - Product Details</a>
+        <a href="#" onclick="showScreen('09')">09 - Property Details</a>
+        <a href="#" onclick="showScreen('10')">10 - Enquiry</a>
+        <a href="#" onclick="showScreen('11')">11 - Reviews</a>
+        <a href="#" onclick="showScreen('12')">12 - Wishlist</a>
+        <a href="#" onclick="showScreen('13')">13 - Price Alerts</a>
+        <a href="#" onclick="showScreen('14')">14 - Cart</a>
+        <a href="#" onclick="showScreen('15')">15 - Checkout</a>
+        <a href="#" onclick="showScreen('16')">16 - Payment</a>
+        <a href="#" onclick="showScreen('17')">17 - Confirmation</a>
+        <a href="#" onclick="showScreen('18')">18 - Promoter Dash</a>
+        <a href="#" onclick="showScreen('19')">19 - Seller Dash</a>
+        <a href="#" onclick="showScreen('20')">20 - Admin Dash</a>
       </div>
     </div>
   </div>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/app.js"></script>
 </body>
